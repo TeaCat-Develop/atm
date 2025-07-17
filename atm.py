@@ -18,15 +18,18 @@ balance = 10000 # 잔액 초기화
 
 while True : # 무한반복
     num = input('사용하실 기능의 번호를 선택해주세요 (1.입금 2.출금 3.영수증 4.종료): ')
+
     if num == '4': # 문자형으로 비교
-        print('시스템을 종료합니다')
         break # 반복문 종료
-    # input('원하시는 기능을 입력해주세요')
-    # ('입금','출금','종료','영수증')
-    if num == '1':
-        pass
+    
+    if num == '1': # 입금 기능 구현 -> feat/deposit 브랜치에서 작업
+        deposit_amount = int(input('입금할 금액을 입력해주세요.')) # str:5000 -> int -> int:5000
+        balance += deposit_amount
+        print(f'입금하신 금액은{deposit_amount}원이고, 현재 잔액은 {balance}원 입니다.')
+    
     if num == '2':
         pass
+    
     if num == '3':
         pass
     # elif가 아니라 if를 사용하는 이유 -> 시인성
