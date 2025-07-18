@@ -27,8 +27,17 @@ while True : # 무한반복
         balance += deposit_amount
         print(f'입금하신 금액은{deposit_amount}원이고, 현재 잔액은 {balance}원 입니다.')
     
-    if num == '2':
-        pass
+    if num == '2': # 출금 기능 구현 -> feat/withdraw 브랜치에서 작업
+        withdraw_amount = int(input('출금할 금액을 입력해주세요.')) # str:5000 -> int -> int:5000
+        withdraw_amount = min(balance,withdraw_amount) # 내장함수 min
+        balance -= withdraw_amount
+        print(f'{withdraw_amount}원 출금되었습니다. 현재 잔액은 {balance}원 입니다.')
+        # min=가벼움 if=4시인성
+        # if balance>0:
+        #     print(f'출금하신 금액은{withdraw_amount}원이고, 현재 잔액은 {balance}원 입니다.')
+        # else:
+        #     balance+=withdraw_amount
+        #     print('잔액이 부족합니다.')
     
     if num == '3':
         pass
